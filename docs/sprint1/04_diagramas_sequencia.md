@@ -1,4 +1,4 @@
-# FinTwin — Diagramas de Sequencia (Sprint 1)
+# FinTwin — Diagramas de Sequência (Sprint 1)
 
 ## DS01 — Login do Utilizador
 
@@ -23,7 +23,7 @@ sequenceDiagram
     API->>DB: SELECT * FROM users WHERE email = ?
     DB-->>API: user record (ou null)
 
-    alt Email nao encontrado
+    alt Email não encontrado
         API-->>FE: 401 "Email ou password incorretos"
         FE-->>U: Mensagem de erro
     end
@@ -43,7 +43,7 @@ sequenceDiagram
 
 ---
 
-## DS02 — Criar Transacao
+## DS02 — Criar Transação
 
 ```mermaid
 sequenceDiagram
@@ -54,7 +54,7 @@ sequenceDiagram
     participant DB as PostgreSQL
     participant RD as Redis
 
-    U->>FE: Preenche descricao, valor, data
+    U->>FE: Preenche descrição, valor, data
     U->>FE: Clica "Adicionar"
     FE->>API: POST /api/v1/transactions {account_id, description, amount, date}
     Note over FE,API: Header: Authorization: Bearer JWT
@@ -63,8 +63,8 @@ sequenceDiagram
     API->>DB: SELECT bank_account WHERE id=? AND user_id=?
     DB-->>API: account (ou null)
 
-    alt Conta nao encontrada
-        API-->>FE: 404 "Conta nao encontrada"
+    alt Conta não encontrada
+        API-->>FE: 404 "Conta não encontrada"
         FE-->>U: Mensagem de erro
     end
 
@@ -79,8 +79,8 @@ sequenceDiagram
     DB-->>API: transaction record
     API->>RD: cache_invalidate("score:{user_id}:*")
     API-->>FE: 201 {id, amount, description, category, ...}
-    FE->>FE: Atualizar lista de transacoes
-    FE-->>U: Modal fecha, transacao visivel na lista
+    FE->>FE: Atualizar lista de transações
+    FE-->>U: Modal fecha, transação visível na lista
 ```
 
 ---
@@ -96,14 +96,14 @@ sequenceDiagram
     participant DB as PostgreSQL
 
     U->>FE: Clica "Importar CSV"
-    FE-->>U: Modal de importacao abre
+    FE-->>U: Modal de importação abre
 
     U->>FE: Seleciona conta de destino
     U->>FE: Arrasta ficheiro CSV
 
     FE->>FE: FileReader.readAsText(file)
     FE->>FE: parseCsvPreview(text)
-    FE-->>U: Pre-visualizacao (5 primeiras linhas) + total
+    FE-->>U: Pré-visualização (5 primeiras linhas) + total
 
     U->>FE: Clica "Confirmar Import"
     FE->>API: POST /api/v1/transactions/upload-csv (multipart: account_id + file)
@@ -121,7 +121,7 @@ sequenceDiagram
 
     API->>DB: flush() — commit batch
     API->>API: cache_invalidate scores
-    API-->>FE: 200 {imported: N, message: "N transacoes importadas"}
+    API-->>FE: 200 {imported: N, message: "N transações importadas"}
     FE-->>U: Modal fecha, lista atualizada
 ```
 
@@ -166,13 +166,13 @@ sequenceDiagram
     end
 
     FE->>FE: Calcular saldo total (soma dos saldos das contas)
-    FE->>FE: Renderizar: hero number, stat cards, transacoes, grafico
+    FE->>FE: Renderizar: hero number, stat cards, transações, gráfico
     FE-->>U: Dashboard completo apresentado
 ```
 
 ---
 
-## DS05 — Criar Orcamento
+## DS05 — Criar Orçamento
 
 ```mermaid
 sequenceDiagram
@@ -181,10 +181,10 @@ sequenceDiagram
     participant API as Backend (FastAPI)
     participant DB as PostgreSQL
 
-    U->>FE: Clica "Novo Orcamento"
-    FE-->>U: Formulario inline abre
+    U->>FE: Clica "Novo Orçamento"
+    FE-->>U: Formulário inline abre
 
-    U->>FE: Seleciona categoria "Restauracao"
+    U->>FE: Seleciona categoria "Restauração"
     U->>FE: Define limite "200" EUR
     U->>FE: Clica "Criar"
 
@@ -202,5 +202,5 @@ sequenceDiagram
     API-->>FE: Summary data
 
     FE->>FE: Renderizar card com barra de progresso
-    FE-->>U: Orcamento visivel com 0% gasto
+    FE-->>U: Orçamento visível com 0% gasto
 ```

@@ -1,8 +1,8 @@
 # FinTwin — Arquitetura do Sistema
 
-## 1. Visao Geral
+## 1. Visão Geral
 
-O FinTwin segue uma arquitetura **cliente-servidor** com separacao clara entre frontend (SPA) e backend (REST API). Toda a comunicacao e feita via HTTP/JSON com autenticacao JWT.
+O FinTwin segue uma arquitetura **cliente-servidor** com separação clara entre frontend (SPA) e backend (REST API). Toda a comunicação é feita via HTTP/JSON com autenticação JWT.
 
 ---
 
@@ -16,8 +16,8 @@ graph TB
 
     subgraph Servidor
         API[FastAPI<br/>REST API]
-        AUTH[Modulo Auth<br/>JWT + bcrypt]
-        BL[Logica de Negocio<br/>Services]
+        AUTH[Módulo Auth<br/>JWT + bcrypt]
+        BL[Lógica de Negócio<br/>Services]
     end
 
     subgraph Dados
@@ -54,37 +54,37 @@ graph LR
 
 ### Containers
 
-| Container | Imagem | Porta | Funcao |
+| Container | Imagem | Porta | Função |
 |-----------|--------|-------|--------|
 | `frontend` | Node 20 + Vite | 5174 | Servir a SPA React |
-| `backend` | Python 3.12 + Uvicorn | 8000 | REST API + logica de negocio |
+| `backend` | Python 3.12 + Uvicorn | 8000 | REST API + lógica de negócio |
 | `postgres` | PostgreSQL 15 | 5432 | Base de dados relacional |
-| `redis` | Redis 7 | 6379 | Cache de dados (taxas de cambio, scores) |
+| `redis` | Redis 7 | 6379 | Cache de dados (taxas de câmbio, scores) |
 
 ---
 
-## 4. Camadas da Aplicacao
+## 4. Camadas da Aplicação
 
 ### 4.1 Frontend (React SPA)
 
 ```
 frontend/src/
-├── pages/           ← Componentes de pagina (1 por rota)
+├── pages/           ← Componentes de página (1 por rota)
 ├── components/
 │   ├── layout/      ← AppLayout, Sidebar, ProtectedRoute
-│   ├── ui/          ← Componentes reutilizaveis (modais, cards, rows)
-│   └── charts/      ← Graficos (Recharts)
+│   ├── ui/          ← Componentes reutilizáveis (modais, cards, rows)
+│   └── charts/      ← Gráficos (Recharts)
 ├── hooks/           ← Custom hooks para API (useAuth, useTransactions, etc.)
 ├── services/
-│   └── api.ts       ← Instancia Axios com interceptors JWT
+│   └── api.ts       ← Instância Axios com interceptors JWT
 └── styles/
     └── globals.css   ← Design system (Tailwind layers)
 ```
 
 **Responsabilidades:**
-- Renderizacao da interface (React 18)
-- Gestao de estado local (hooks + context)
-- Comunicacao com API via Axios
+- Renderização da interface (React 18)
+- Gestão de estado local (hooks + context)
+- Comunicação com API via Axios
 - Routing (React Router v6)
 - Dark mode (ThemeProvider + CSS variables)
 
@@ -93,11 +93,11 @@ frontend/src/
 ```
 backend/app/
 ├── api/
-│   ├── routes/      ← Handlers por dominio (auth, transactions, budgets, etc.)
-│   └── deps.py      ← Dependencias (get_current_user)
+│   ├── routes/      ← Handlers por domínio (auth, transactions, budgets, etc.)
+│   └── deps.py      ← Dependências (get_current_user)
 ├── models/          ← Modelos SQLAlchemy (ORM)
-├── schemas/         ← Schemas Pydantic (validacao request/response)
-├── services/        ← Logica de negocio (categorizacao, etc.)
+├── schemas/         ← Schemas Pydantic (validação request/response)
+├── services/        ← Lógica de negócio (categorização, etc.)
 └── core/
     ├── database.py  ← Engine async + SessionLocal
     ├── security.py  ← JWT + bcrypt
@@ -106,39 +106,39 @@ backend/app/
 ```
 
 **Responsabilidades:**
-- Validacao de requests (Pydantic v2)
-- Autenticacao e autorizacao (JWT Bearer)
-- Logica de negocio (services/)
+- Validação de requests (Pydantic v2)
+- Autenticação e autorização (JWT Bearer)
+- Lógica de negócio (services/)
 - Acesso a dados (SQLAlchemy async)
-- Rate limiting nos endpoints sensiveis
+- Rate limiting nos endpoints sensíveis
 
 ### 4.3 Base de Dados (PostgreSQL)
 
 - Modelo relacional com 6 tabelas core (Sprint 1)
-- Migracoes geridas por Alembic
-- UUIDs como chaves primarias
-- Relacoes com CASCADE e SET NULL conforme o caso
-- Indices nos campos mais consultados (email, account_id, transaction_date)
+- Migrações geridas por Alembic
+- UUIDs como chaves primárias
+- Relações com CASCADE e SET NULL conforme o caso
+- Índices nos campos mais consultados (email, account_id, transaction_date)
 
 ### 4.4 Cache (Redis)
 
-- Cache de dados temporarios (taxas de cambio, scores calculados)
-- TTL configuravel (1 hora por defeito)
+- Cache de dados temporários (taxas de câmbio, scores calculados)
+- TTL configurável (1 hora por defeito)
 - Graceful degradation — a app funciona mesmo sem Redis
 
 ---
 
-## 5. Comunicacao
+## 5. Comunicação
 
 ### 5.1 API REST
 
 - Prefixo: `/api/v1`
 - Formato: JSON
-- Autenticacao: Bearer Token (JWT)
-- Paginacao: `?limit=50&offset=0`
+- Autenticação: Bearer Token (JWT)
+- Paginação: `?limit=50&offset=0`
 - Updates parciais: PATCH (apenas campos alterados)
 
-### 5.2 Fluxo de Autenticacao
+### 5.2 Fluxo de Autenticação
 
 ```mermaid
 sequenceDiagram
@@ -161,13 +161,13 @@ sequenceDiagram
 
 ---
 
-## 6. Decisoes Arquiteturais
+## 6. Decisões Arquiteturais
 
-| Decisao | Justificacao |
+| Decisão | Justificação |
 |---------|-------------|
-| SPA + REST API | Separacao clara frontend/backend, facilita desenvolvimento independente |
+| SPA + REST API | Separação clara frontend/backend, facilita desenvolvimento independente |
 | Async (FastAPI + SQLAlchemy) | Melhor performance com I/O concorrente (DB queries, cache) |
-| JWT stateless | Sem necessidade de sessoes server-side, escalavel horizontalmente |
-| Docker Compose | Ambiente de desenvolvimento reprodutivel, deploy simplificado |
+| JWT stateless | Sem necessidade de sessões server-side, escalável horizontalmente |
+| Docker Compose | Ambiente de desenvolvimento reprodutível, deploy simplificado |
 | PostgreSQL | Suporte a UUIDs nativos, tipos ricos, migrações com Alembic |
-| Redis | Cache rapido para dados temporarios, reduz carga na DB |
+| Redis | Cache rápido para dados temporários, reduz carga na DB |

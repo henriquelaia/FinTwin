@@ -1,39 +1,39 @@
-# FinTwin — Features, Personas e Cenarios (Sprint 1)
+# FinTwin — Features, Personas e Cenários (Sprint 1)
 
-> Artefactos produzidos no ambito do Lab#3 — Features, Scenarios, and Stories
+> Artefactos produzidos no âmbito do Lab#3 — Features, Scenarios, and Stories
 > Disciplina: Engenharia de Software 2025/26 — UBI
 
 ---
 
 ## 1. Personas
 
-As personas representam arqutipos de utilizadores reais do FinTwin, construidas com base nos perfis mais comuns de utilizadores de apps de gestao financeira pessoal.
+As personas representam arquétipos de utilizadores reais do FinTwin, construídas com base nos perfis mais comuns de utilizadores de apps de gestão financeira pessoal.
 
 ---
 
-### Persona P01 — Joao Silva (Estudante Universitario)
+### Persona P01 — João Silva (Estudante Universitário)
 
 | Campo | Detalhe |
 |-------|---------|
-| **Nome** | Joao Silva |
+| **Nome** | João Silva |
 | **Idade** | 22 anos |
-| **Ocupacao** | Estudante de Engenharia Informatica, 3.º ano |
-| **Rendimento** | 500 EUR/mes (bolsa de estudo + part-time) |
-| **Dispositivos** | Smartphone Android, portatil Windows |
-| **Objetivo principal** | Perceber para onde vai o dinheiro ao fim do mes |
-| **Frustracao** | "Gasto mais do que ganho sem perceber onde" |
+| **Ocupação** | Estudante de Engenharia Informática, 3.º ano |
+| **Rendimento** | 500 EUR/mês (bolsa de estudo + part-time) |
+| **Dispositivos** | Smartphone Android, portátil Windows |
+| **Objetivo principal** | Perceber para onde vai o dinheiro ao fim do mês |
+| **Frustração** | "Gasto mais do que ganho sem perceber onde" |
 
 **Conhecimentos:**
-- **User knowledge**: sabe usar apps financeiras basicas
-- **Technology knowledge**: alto — e programador
-- **Domain knowledge**: baixo — nunca geriu orcamentos formalmente
+- **User knowledge**: sabe usar apps financeiras básicas
+- **Technology knowledge**: alto — é programador
+- **Domain knowledge**: baixo — nunca geriu orçamentos formalmente
 - **Product knowledge**: nenhum — utilizador novo
 
 **Como usa o FinTwin:**
-1. Regista o salario do part-time como receita
+1. Regista o salário do part-time como receita
 2. Importa extrato do banco em CSV mensalmente
-3. Consulta o dashboard ao fim do mes
-4. Cria orcamento de 100 EUR para restauracao
+3. Consulta o dashboard ao fim do mês
+4. Cria orçamento de 100 EUR para restauração
 
 ---
 
@@ -43,22 +43,22 @@ As personas representam arqutipos de utilizadores reais do FinTwin, construidas 
 |-------|---------|
 | **Nome** | Maria Santos |
 | **Idade** | 34 anos |
-| **Ocupacao** | Gestora de Projeto numa empresa de IT |
-| **Rendimento** | 2 200 EUR/mes liquidos |
+| **Ocupação** | Gestora de Projeto numa empresa de IT |
+| **Rendimento** | 2 200 EUR/mês líquidos |
 | **Dispositivos** | iPhone, MacBook Pro |
 | **Objetivo principal** | Poupar para entrada numa casa (meta: 20 000 EUR em 3 anos) |
-| **Frustracao** | "Tenho duas contas bancarias e perco o fio ao saldo real" |
+| **Frustração** | "Tenho duas contas bancárias e perco o fio ao saldo real" |
 
 **Conhecimentos:**
-- **User knowledge**: usa Excel para orcamentos ha anos
-- **Technology knowledge**: medio — nao e tecnica mas e fluente digitalmente
-- **Domain knowledge**: alto — gere orcamentos profissionalmente
+- **User knowledge**: usa Excel para orçamentos há anos
+- **Technology knowledge**: médio — não é técnica mas é fluente digitalmente
+- **Domain knowledge**: alto — gere orçamentos profissionalmente
 - **Product knowledge**: nenhum — migrou de outra app
 
 **Como usa o FinTwin:**
-1. Adiciona as duas contas bancarias (conta corrente + poupanca)
-2. Regista transacoes manualmente ao longo do mes
-3. Define orcamentos para supermercado, restauracao e lazer
+1. Adiciona as duas contas bancárias (conta corrente + poupança)
+2. Regista transações manualmente ao longo do mês
+3. Define orçamentos para supermercado, restauração e lazer
 4. Consulta o dashboard semanalmente
 
 ---
@@ -69,31 +69,31 @@ As personas representam arqutipos de utilizadores reais do FinTwin, construidas 
 |-------|---------|
 | **Nome** | Carlos Ferreira |
 | **Idade** | 47 anos |
-| **Ocupacao** | Medico com clinica propria |
-| **Rendimento** | Variavel (3 000–6 000 EUR/mes) |
+| **Ocupação** | Médico com clínica própria |
+| **Rendimento** | Variável (3 000–6 000 EUR/mês) |
 | **Dispositivos** | iPad, desktop Windows |
 | **Objetivo principal** | Separar despesas pessoais das profissionais |
-| **Frustracao** | "Os meus gastos pessoais e profissionais misturam-se" |
+| **Frustração** | "Os meus gastos pessoais e profissionais misturam-se" |
 
 **Conhecimentos:**
-- **User knowledge**: utilizador basico de tecnologia
+- **User knowledge**: utilizador básico de tecnologia
 - **Technology knowledge**: baixo
-- **Domain knowledge**: alto — tem contabilista mas quer visibilidade propria
+- **Domain knowledge**: alto — tem contabilista mas quer visibilidade própria
 - **Product knowledge**: nenhum
 
 **Como usa o FinTwin:**
 1. Cria conta separada para despesas pessoais
-2. Categoriza despesas manualmente (saude, transporte, lazer)
-3. Exporta relatorio mensal em PDF para o contabilista
+2. Categoriza despesas manualmente (saúde, transporte, lazer)
+3. Exporta relatório mensal em PDF para o contabilista
 
 ---
 
 ## 2. Features com Template Input / Action / Output
 
-Cada feature do FinTwin e descrita segundo o template:
+Cada feature do FinTwin é descrita segundo o template:
 - **Input**: o que o utilizador fornece ou desencadeia
 - **Action**: o que o sistema executa internamente
-- **Output**: o que o utilizador recebe/ve como resultado
+- **Output**: o que o utilizador recebe/vê como resultado
 
 ---
 
@@ -101,7 +101,7 @@ Cada feature do FinTwin e descrita segundo o template:
 
 | | |
 |-|--|
-| **Input** | Nome completo, email, password (obrigatorios); rendimento mensal e moeda (opcionais) |
+| **Input** | Nome completo, email, password (obrigatórios); rendimento mensal e moeda (opcionais) |
 | **Action** | Sistema valida unicidade do email, faz hash da password (bcrypt, 12 rounds), cria registo na BD, emite JWT |
 | **Output** | Conta criada, token JWT devolvido, utilizador redirecionado para wizard de onboarding |
 
@@ -112,38 +112,38 @@ Cada feature do FinTwin e descrita segundo o template:
 | | |
 |-|--|
 | **Input** | Email e password |
-| **Action** | Sistema verifica rate limit (max 10 tentativas/min), consulta BD, compara hash da password, gera JWT (expiracao 7 dias) |
-| **Output** | Token JWT, redirecionamento para dashboard; ou mensagem de erro generica se credenciais invalidas |
+| **Action** | Sistema verifica rate limit (max 10 tentativas/min), consulta BD, compara hash da password, gera JWT (expiração 7 dias) |
+| **Output** | Token JWT, redirecionamento para dashboard; ou mensagem de erro genérica se credenciais inválidas |
 
 ---
 
-### F03 — Gestao de Contas Bancarias (CRUD)
+### F03 — Gestão de Contas Bancárias (CRUD)
 
 | | |
 |-|--|
-| **Input** | Nome do banco, tipo de conta (corrente/poupanca/investimento), saldo inicial; ou selecao de conta existente para editar/eliminar |
-| **Action** | Sistema cria/atualiza/elimina registo na tabela `bank_accounts`; em eliminacao, remove transacoes em cascata (CASCADE) |
+| **Input** | Nome do banco, tipo de conta (corrente/poupança/investimento), saldo inicial; ou seleção de conta existente para editar/eliminar |
+| **Action** | Sistema cria/atualiza/elimina registo na tabela `bank_accounts`; em eliminação, remove transações em cascata (CASCADE) |
 | **Output** | Lista de contas atualizada no perfil; saldo total no dashboard recalculado |
 
 ---
 
-### F04 — Adicionar Transacao Manual
+### F04 — Adicionar Transação Manual
 
 | | |
 |-|--|
-| **Input** | Descricao, valor (positivo = receita, negativo = despesa), data, conta bancaria; categoria (opcional) |
-| **Action** | Sistema armazena a transacao; se sem categoria, executa categorizacao automatica (match por palavras-chave) |
-| **Output** | Transacao aparece na lista agrupada por data, dashboard atualizado |
+| **Input** | Descrição, valor (positivo = receita, negativo = despesa), data, conta bancária; categoria (opcional) |
+| **Action** | Sistema armazena a transação; se sem categoria, executa categorização automática (match por palavras-chave) |
+| **Output** | Transação aparece na lista agrupada por data, dashboard atualizado |
 
 ---
 
-### F05 — Importacao de Transacoes via CSV
+### F05 — Importação de Transações via CSV
 
 | | |
 |-|--|
-| **Input** | Ficheiro CSV com colunas: data, descricao, valor, comerciante; conta bancaria de destino |
-| **Action** | Sistema faz parse linha a linha (csv.DictReader), categoriza cada transacao automaticamente, insere em batch na BD |
-| **Output** | Confirmacao com numero de transacoes importadas (ex: "47 transacoes importadas"); lista de transacoes atualizada |
+| **Input** | Ficheiro CSV com colunas: data, descrição, valor, comerciante; conta bancária de destino |
+| **Action** | Sistema faz parse linha a linha (csv.DictReader), categoriza cada transação automaticamente, insere em batch na BD |
+| **Output** | Confirmação com número de transações importadas (ex: "47 transações importadas"); lista de transações atualizada |
 
 ---
 
@@ -151,46 +151,46 @@ Cada feature do FinTwin e descrita segundo o template:
 
 | | |
 |-|--|
-| **Input** | Pedido de carregamento da pagina (autenticado) |
-| **Action** | Sistema agrega: soma dos saldos de todas as contas, total de receitas e despesas do mes atual, 5 transacoes mais recentes, distribuicao de despesas por categoria |
-| **Output** | Painel com saldo total, resumo mensal (receitas/despesas com variacao %), lista de transacoes recentes, grafico pie chart por categoria |
+| **Input** | Pedido de carregamento da página (autenticado) |
+| **Action** | Sistema agrega: soma dos saldos de todas as contas, total de receitas e despesas do mês atual, 5 transações mais recentes, distribuição de despesas por categoria |
+| **Output** | Painel com saldo total, resumo mensal (receitas/despesas com variação %), lista de transações recentes, gráfico pie chart por categoria |
 
 ---
 
-### F07 — Gestao de Orcamentos Mensais
+### F07 — Gestão de Orçamentos Mensais
 
 | | |
 |-|--|
-| **Input** | Categoria, limite mensal em EUR, periodo (mes/ano) |
-| **Action** | Sistema cria orcamento; ao listar, calcula total gasto nessa categoria no periodo a partir das transacoes existentes; calcula percentagem do limite atingido |
+| **Input** | Categoria, limite mensal em EUR, período (mês/ano) |
+| **Action** | Sistema cria orçamento; ao listar, calcula total gasto nessa categoria no período a partir das transações existentes; calcula percentagem do limite atingido |
 | **Output** | Card com barra de progresso colorida (verde < 80%, laranja 80–100%, vermelho > 100%) e valor gasto/limite |
 
 ---
 
-### F08 — Categorizacao Automatica
+### F08 — Categorização Automática
 
 | | |
 |-|--|
-| **Input** | Descricao e/ou nome do comerciante de uma transacao |
-| **Action** | Sistema percorre lista de categorias por ordem de prioridade, compara palavras-chave com a descricao (case-insensitive), atribui a primeira categoria com match |
-| **Output** | Campo `category_id` da transacao preenchido automaticamente; sem match = sem categoria (NULL) |
+| **Input** | Descrição e/ou nome do comerciante de uma transação |
+| **Action** | Sistema percorre lista de categorias por ordem de prioridade, compara palavras-chave com a descrição (case-insensitive), atribui a primeira categoria com match |
+| **Output** | Campo `category_id` da transação preenchido automaticamente; sem match = sem categoria (NULL) |
 
 ---
 
-### F09 — Edicao de Perfil
+### F09 — Edição de Perfil
 
 | | |
 |-|--|
-| **Input** | Nome, rendimento mensal, moeda preferida (campos editaveis) |
+| **Input** | Nome, rendimento mensal, moeda preferida (campos editáveis) |
 | **Action** | Sistema atualiza registo na tabela `users`, invalida cache se existir |
-| **Output** | Confirmacao de alteracoes guardadas; dados refletidos no dashboard |
+| **Output** | Confirmação de alterações guardadas; dados refletidos no dashboard |
 
 ---
 
-## 3. Cenarios Gherkin (Formato Completo)
+## 3. Cenários Gherkin (Formato Completo)
 
-Os cenarios seguem o formato BDD com as palavras-chave:
-`Funcionalidade` / `Cenario` / `Dado` / `Quando` / `Entao` / `E` / `Mas`
+Os cenários seguem o formato BDD com as palavras-chave:
+`Funcionalidade` / `Cenário` / `Dado` / `Quando` / `Então` / `E` / `Mas`
 
 ---
 
@@ -200,28 +200,28 @@ Os cenarios seguem o formato BDD com as palavras-chave:
 Funcionalidade: Registo de novo utilizador
   Como visitante
   Quero criar uma conta no FinTwin
-  Para comecar a gerir as minhas financas pessoais
+  Para começar a gerir as minhas finanças pessoais
 
-  Cenario: Registo com dados validos
-    Dado que nao tenho conta no sistema
-    Quando preencho nome "Joao Silva", email "joao@email.com" e password "secret123"
+  Cenário: Registo com dados válidos
+    Dado que não tenho conta no sistema
+    Quando preencho nome "João Silva", email "joao@email.com" e password "secret123"
     E clico em "Criar Conta"
-    Entao a conta e criada com sucesso
+    Então a conta é criada com sucesso
     E recebo um token JWT
     E sou redirecionado para o wizard de onboarding
 
-  Cenario: Email ja registado
-    Dado que ja existe uma conta com email "joao@email.com"
+  Cenário: Email já registado
+    Dado que já existe uma conta com email "joao@email.com"
     Quando tento registar com o mesmo email
-    Entao vejo a mensagem "Este email ja esta registado"
-    E permaneco na pagina de registo
+    Então vejo a mensagem "Este email já está registado"
+    E permaneço na página de registo
 
-  Cenario: Password demasiado curta
-    Dado que estou na pagina de registo
+  Cenário: Password demasiado curta
+    Dado que estou na página de registo
     Quando preencho password com menos de 6 caracteres
     E clico em "Criar Conta"
-    Entao vejo mensagem "Password demasiado curta"
-    E a conta nao e criada
+    Então vejo mensagem "Password demasiado curta"
+    E a conta não é criada
 ```
 
 ---
@@ -229,79 +229,79 @@ Funcionalidade: Registo de novo utilizador
 ### Funcionalidade: Login (RF02)
 
 ```gherkin
-Funcionalidade: Autenticacao do utilizador
+Funcionalidade: Autenticação do utilizador
   Como utilizador registado
   Quero fazer login
   Para aceder ao meu dashboard financeiro
 
-  Cenario: Login com credenciais validas
+  Cenário: Login com credenciais válidas
     Dado que tenho conta com email "joao@email.com" e password "secret123"
     Quando preencho as credenciais corretas
     E clico em "Entrar"
-    Entao recebo um token JWT
+    Então recebo um token JWT
     E sou redirecionado para o dashboard
 
-  Cenario: Password incorreta
+  Cenário: Password incorreta
     Dado que tenho conta com email "joao@email.com"
     Quando preencho password incorreta "wrongpass"
-    Entao vejo a mensagem "Email ou password incorretos"
-    E nao recebo token
+    Então vejo a mensagem "Email ou password incorretos"
+    E não recebo token
 
-  Cenario: Rate limit atingido
-    Dado que falhei o login 10 vezes no ultimo minuto
+  Cenário: Rate limit atingido
+    Dado que falhei o login 10 vezes no último minuto
     Quando tento fazer login novamente
-    Entao vejo a mensagem "Demasiadas tentativas. Tenta mais tarde"
-    E o pedido e bloqueado com codigo 429
+    Então vejo a mensagem "Demasiadas tentativas. Tenta mais tarde"
+    E o pedido é bloqueado com código 429
 ```
 
 ---
 
-### Funcionalidade: Gestao de Contas Bancarias (RF03)
+### Funcionalidade: Gestão de Contas Bancárias (RF03)
 
 ```gherkin
-Funcionalidade: Criar e gerir contas bancarias
+Funcionalidade: Criar e gerir contas bancárias
   Como utilizador autenticado
-  Quero adicionar as minhas contas bancarias
-  Para ter uma visao consolidada dos meus saldos
+  Quero adicionar as minhas contas bancárias
+  Para ter uma visão consolidada dos meus saldos
 
-  Cenario: Criar conta bancaria com sucesso
-    Dado que estou autenticado e na pagina de perfil
+  Cenário: Criar conta bancária com sucesso
+    Dado que estou autenticado e na página de perfil
     Quando preencho nome "Caixa Geral", tipo "corrente" e saldo "1500.00"
     E clico em "Adicionar Conta"
-    Entao a conta aparece na lista de contas
+    Então a conta aparece na lista de contas
     E o saldo total no dashboard aumenta 1500.00 EUR
 
-  Cenario: Eliminar conta bancaria
-    Dado que tenho uma conta "NovoBanco" com 3 transacoes
+  Cenário: Eliminar conta bancária
+    Dado que tenho uma conta "NovoBanco" com 3 transações
     Quando clico em "Eliminar" na conta "NovoBanco"
-    E confirmo a eliminacao
-    Entao a conta e eliminada
-    E as 3 transacoes associadas sao tambem eliminadas
+    E confirmo a eliminação
+    Então a conta é eliminada
+    E as 3 transações associadas são também eliminadas
 ```
 
 ---
 
-### Funcionalidade: Adicionar Transacao Manual (RF04)
+### Funcionalidade: Adicionar Transação Manual (RF04)
 
 ```gherkin
-Funcionalidade: Registar transacao manual
+Funcionalidade: Registar transação manual
   Como utilizador autenticado
-  Quero adicionar uma transacao manualmente
-  Para registar gastos ou receitas que nao aparecem no extrato bancario
+  Quero adicionar uma transação manualmente
+  Para registar gastos ou receitas que não aparecem no extrato bancário
 
-  Cenario: Adicionar despesa com categoria
-    Dado que estou na pagina de transacoes
-    Quando clico em "Nova Transacao"
-    E preencho descricao "Almoco", valor "-8.50", data "2026-03-22", categoria "Restauracao"
+  Cenário: Adicionar despesa com categoria
+    Dado que estou na página de transações
+    Quando clico em "Nova Transação"
+    E preencho descrição "Almoço", valor "-8.50", data "2026-03-22", categoria "Restauração"
     E clico em "Guardar"
-    Entao a transacao aparece na lista com valor "-8,50 EUR"
-    E a categoria "Restauracao" esta corretamente atribuida
+    Então a transação aparece na lista com valor "-8,50 EUR"
+    E a categoria "Restauração" está corretamente atribuída
 
-  Cenario: Adicionar transacao sem categoria (categorizacao automatica)
-    Dado que estou a adicionar uma nova transacao
-    Quando preencho descricao "Uber Eats" e valor "-12.00" sem selecionar categoria
-    Entao o sistema atribui automaticamente a categoria "Restauracao"
-    E a transacao aparece categorizada na lista
+  Cenário: Adicionar transação sem categoria (categorização automática)
+    Dado que estou a adicionar uma nova transação
+    Quando preencho descrição "Uber Eats" e valor "-12.00" sem selecionar categoria
+    Então o sistema atribui automaticamente a categoria "Restauração"
+    E a transação aparece categorizada na lista
 ```
 
 ---
@@ -309,51 +309,51 @@ Funcionalidade: Registar transacao manual
 ### Funcionalidade: Importar CSV (RF05)
 
 ```gherkin
-Funcionalidade: Importar transacoes por CSV
+Funcionalidade: Importar transações por CSV
   Como utilizador autenticado
   Quero importar um ficheiro CSV do meu banco
-  Para adicionar rapidamente um historico de transacoes
+  Para adicionar rapidamente um histórico de transações
 
-  Cenario: Importar CSV valido
-    Dado que tenho um ficheiro CSV com 47 linhas de transacoes validas
+  Cenário: Importar CSV válido
+    Dado que tenho um ficheiro CSV com 47 linhas de transações válidas
     Quando seleciono a conta "Caixa Geral" e faço upload do ficheiro
-    E clico em "Confirmar Importacao"
-    Entao vejo "47 transacoes importadas com sucesso"
-    E as transacoes aparecem na lista agrupadas por data
+    E clico em "Confirmar Importação"
+    Então vejo "47 transações importadas com sucesso"
+    E as transações aparecem na lista agrupadas por data
 
-  Cenario: Ficheiro nao e CSV
+  Cenário: Ficheiro não é CSV
     Dado que tento fazer upload de um ficheiro .xlsx
-    Entao vejo a mensagem "Apenas ficheiros CSV sao aceites"
-    E o upload e cancelado
+    Então vejo a mensagem "Apenas ficheiros CSV são aceites"
+    E o upload é cancelado
 ```
 
 ---
 
-### Funcionalidade: Orcamentos Mensais (RF09)
+### Funcionalidade: Orçamentos Mensais (RF09)
 
 ```gherkin
-Funcionalidade: Gerir orcamentos por categoria
+Funcionalidade: Gerir orçamentos por categoria
   Como utilizador autenticado
   Quero definir limites de gasto por categoria
   Para controlar os meus gastos mensais
 
-  Cenario: Criar orcamento mensal
-    Dado que estou na pagina de orcamentos
-    Quando clico em "Novo Orcamento"
-    E seleciono categoria "Restauracao" e defino limite "200"
+  Cenário: Criar orçamento mensal
+    Dado que estou na página de orçamentos
+    Quando clico em "Novo Orçamento"
+    E seleciono categoria "Restauração" e defino limite "200"
     E clico em "Guardar"
-    Entao aparece um card "Restauracao" com barra de progresso
-    E o limite de 200 EUR esta visivel
+    Então aparece um card "Restauração" com barra de progresso
+    E o limite de 200 EUR está visível
 
-  Cenario: Orcamento excedido (> 100%)
-    Dado que o orcamento de "Entretenimento" tem limite 50 EUR
-    E ja gastei 52 EUR nessa categoria este mes
-    Entao a barra de progresso aparece a vermelho
+  Cenário: Orçamento excedido (> 100%)
+    Dado que o orçamento de "Entretenimento" tem limite 50 EUR
+    E já gastei 52 EUR nessa categoria este mês
+    Então a barra de progresso aparece a vermelho
     E o valor mostra "52 / 50 EUR (104%)"
 
-  Cenario: Orcamento em zona de aviso (80-100%)
-    Dado que o orcamento de "Transportes" tem limite 150 EUR
-    E ja gastei 130 EUR (87%)
-    Entao a barra de progresso aparece a laranja
-    E vejo o icone de aviso junto ao orcamento
+  Cenário: Orçamento em zona de aviso (80-100%)
+    Dado que o orçamento de "Transportes" tem limite 150 EUR
+    E já gastei 130 EUR (87%)
+    Então a barra de progresso aparece a laranja
+    E vejo o ícone de aviso junto ao orçamento
 ```

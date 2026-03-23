@@ -73,7 +73,7 @@ erDiagram
     USERS ||--o{ BANK_ACCOUNTS : "possui"
     USERS ||--o{ BUDGETS : "define"
     USERS ||--o{ NOTIFICATIONS : "recebe"
-    BANK_ACCOUNTS ||--o{ TRANSACTIONS : "contem"
+    BANK_ACCOUNTS ||--o{ TRANSACTIONS : "contém"
     CATEGORIES ||--o{ TRANSACTIONS : "classifica"
     CATEGORIES ||--o{ BUDGETS : "limita"
     CATEGORIES ||--o{ CATEGORIES : "subcategoria"
@@ -81,15 +81,15 @@ erDiagram
 
 ---
 
-## 2. Descricao das Entidades
+## 2. Descrição das Entidades
 
 ### 2.1 Users (Utilizadores)
 
 Armazena as credenciais e dados pessoais de cada utilizador.
 
-| Campo | Tipo | Restricoes | Descricao |
+| Campo | Tipo | Restrições | Descrição |
 |-------|------|-----------|-----------|
-| `id` | UUID | PK, auto-generated | Identificador unico |
+| `id` | UUID | PK, auto-generated | Identificador único |
 | `email` | VARCHAR(255) | UNIQUE, INDEX | Email de login |
 | `password_hash` | VARCHAR(255) | NOT NULL | Hash bcrypt da password |
 | `full_name` | VARCHAR(150) | NOT NULL | Nome completo |
@@ -97,103 +97,103 @@ Armazena as credenciais e dados pessoais de cada utilizador.
 | `monthly_income` | FLOAT | NULLABLE | Rendimento mensal declarado |
 | `currency` | VARCHAR(3) | DEFAULT 'EUR' | Moeda preferida (ISO 4217) |
 | `created_at` | TIMESTAMP(tz) | auto | Data de registo |
-| `updated_at` | TIMESTAMP(tz) | auto | Ultima atualizacao |
+| `updated_at` | TIMESTAMP(tz) | auto | Última atualização |
 
-### 2.2 Bank_Accounts (Contas Bancarias)
+### 2.2 Bank_Accounts (Contas Bancárias)
 
-Cada utilizador pode ter multiplas contas bancarias.
+Cada utilizador pode ter múltiplas contas bancárias.
 
-| Campo | Tipo | Restricoes | Descricao |
+| Campo | Tipo | Restrições | Descrição |
 |-------|------|-----------|-----------|
-| `id` | UUID | PK | Identificador unico |
-| `user_id` | UUID | FK → users.id, CASCADE | Proprietario da conta |
+| `id` | UUID | PK | Identificador único |
+| `user_id` | UUID | FK → users.id, CASCADE | Proprietário da conta |
 | `bank_name` | VARCHAR(100) | NOT NULL | Nome do banco (ex: Caixa Geral) |
 | `account_type` | ENUM | checking/savings/investment | Tipo de conta |
 | `balance` | FLOAT | DEFAULT 0.0 | Saldo atual |
 | `currency` | VARCHAR(3) | DEFAULT 'EUR' | Moeda da conta |
-| `created_at` | TIMESTAMP(tz) | auto | Data de criacao |
+| `created_at` | TIMESTAMP(tz) | auto | Data de criação |
 
-### 2.3 Transactions (Transacoes)
+### 2.3 Transactions (Transações)
 
-Movimentos financeiros associados a uma conta bancaria.
+Movimentos financeiros associados a uma conta bancária.
 
-| Campo | Tipo | Restricoes | Descricao |
+| Campo | Tipo | Restrições | Descrição |
 |-------|------|-----------|-----------|
-| `id` | UUID | PK | Identificador unico |
+| `id` | UUID | PK | Identificador único |
 | `account_id` | UUID | FK → bank_accounts.id, CASCADE, INDEX | Conta associada |
 | `category_id` | UUID | FK → categories.id, SET NULL, NULLABLE | Categoria (manual ou auto) |
 | `amount` | FLOAT | NOT NULL | Valor (negativo = despesa, positivo = receita) |
-| `description` | VARCHAR(255) | NOT NULL | Descricao do movimento |
+| `description` | VARCHAR(255) | NOT NULL | Descrição do movimento |
 | `merchant_name` | VARCHAR(150) | NULLABLE | Nome do comerciante |
 | `transaction_date` | DATE | INDEX | Data do movimento |
 | `source` | ENUM | manual/csv/open_banking | Origem do registo |
-| `category_confidence` | FLOAT | NULLABLE | Confianca da categorizacao automatica (0.0-1.0) |
+| `category_confidence` | FLOAT | NULLABLE | Confiança da categorização automática (0.0-1.0) |
 | `is_recurring` | BOOLEAN | DEFAULT false | Marcada como recorrente |
-| `created_at` | TIMESTAMP(tz) | auto | Data de criacao |
+| `created_at` | TIMESTAMP(tz) | auto | Data de criação |
 
 ### 2.4 Categories (Categorias)
 
-Categorias predefinidas (sistema) e customizaveis para classificar transacoes.
+Categorias predefinidas (sistema) e customizáveis para classificar transações.
 
-| Campo | Tipo | Restricoes | Descricao |
+| Campo | Tipo | Restrições | Descrição |
 |-------|------|-----------|-----------|
-| `id` | UUID | PK | Identificador unico |
+| `id` | UUID | PK | Identificador único |
 | `name` | VARCHAR(80) | INDEX | Nome da categoria |
-| `icon_key` | VARCHAR(50) | DEFAULT 'default' | Chave do icone SVG |
+| `icon_key` | VARCHAR(50) | DEFAULT 'default' | Chave do ícone SVG |
 | `color` | VARCHAR(7) | DEFAULT '#6366F1' | Cor em hex |
 | `type` | ENUM | income/expense | Tipo (receita ou despesa) |
 | `parent_id` | UUID | FK → categories.id, NULLABLE | Categoria pai (subcategorias) |
 | `is_system` | BOOLEAN | DEFAULT false | Predefinida pelo sistema |
 
-**Categorias predefinidas (seed):** Restauracao, Supermercado, Transportes, Saude, Educacao, Entretenimento, Habitacao, Servicos, Vestuario, Tecnologia, Viagens, Outros.
+**Categorias predefinidas (seed):** Restauração, Supermercado, Transportes, Saúde, Educação, Entretenimento, Habitação, Serviços, Vestuário, Tecnologia, Viagens, Outros.
 
-### 2.5 Budgets (Orcamentos)
+### 2.5 Budgets (Orçamentos)
 
 Limites de gastos mensais por categoria.
 
-| Campo | Tipo | Restricoes | Descricao |
+| Campo | Tipo | Restrições | Descrição |
 |-------|------|-----------|-----------|
-| `id` | UUID | PK | Identificador unico |
-| `user_id` | UUID | FK → users.id, CASCADE, INDEX | Proprietario |
-| `category_id` | UUID | FK → categories.id, CASCADE | Categoria do orcamento |
+| `id` | UUID | PK | Identificador único |
+| `user_id` | UUID | FK → users.id, CASCADE, INDEX | Proprietário |
+| `category_id` | UUID | FK → categories.id, CASCADE | Categoria do orçamento |
 | `monthly_limit` | FLOAT | NOT NULL | Limite mensal em EUR |
-| `period_start` | DATE | NOT NULL | Inicio do periodo |
-| `period_end` | DATE | NOT NULL | Fim do periodo |
-| `created_at` | TIMESTAMP(tz) | auto | Data de criacao |
+| `period_start` | DATE | NOT NULL | Início do período |
+| `period_end` | DATE | NOT NULL | Fim do período |
+| `created_at` | TIMESTAMP(tz) | auto | Data de criação |
 
-### 2.6 Notifications (Notificacoes)
+### 2.6 Notifications (Notificações)
 
 Alertas e avisos para o utilizador.
 
-| Campo | Tipo | Restricoes | Descricao |
+| Campo | Tipo | Restrições | Descrição |
 |-------|------|-----------|-----------|
-| `id` | UUID | PK | Identificador unico |
-| `user_id` | UUID | FK → users.id, CASCADE | Destinatario |
+| `id` | UUID | PK | Identificador único |
+| `user_id` | UUID | FK → users.id, CASCADE | Destinatário |
 | `type` | VARCHAR(50) | NOT NULL | Tipo (low_balance, budget_exceeded, etc.) |
-| `title` | VARCHAR(255) | NOT NULL | Titulo do alerta |
-| `message` | TEXT | NOT NULL | Conteudo |
-| `is_read` | BOOLEAN | DEFAULT false | Lida/nao lida |
-| `created_at` | TIMESTAMP(tz) | auto | Data de criacao |
+| `title` | VARCHAR(255) | NOT NULL | Título do alerta |
+| `message` | TEXT | NOT NULL | Conteúdo |
+| `is_read` | BOOLEAN | DEFAULT false | Lida/não lida |
+| `created_at` | TIMESTAMP(tz) | auto | Data de criação |
 
 ---
 
-## 3. Relacoes
+## 3. Relações
 
-| Relacao | Tipo | Descricao |
+| Relação | Tipo | Descrição |
 |---------|------|-----------|
-| Users → Bank_Accounts | 1:N | Um utilizador possui varias contas |
-| Users → Budgets | 1:N | Um utilizador define varios orcamentos |
-| Users → Notifications | 1:N | Um utilizador recebe varias notificacoes |
-| Bank_Accounts → Transactions | 1:N | Uma conta contem varias transacoes |
-| Categories → Transactions | 1:N | Uma categoria classifica varias transacoes |
-| Categories → Budgets | 1:N | Uma categoria pode ter varios orcamentos |
+| Users → Bank_Accounts | 1:N | Um utilizador possui várias contas |
+| Users → Budgets | 1:N | Um utilizador define vários orçamentos |
+| Users → Notifications | 1:N | Um utilizador recebe várias notificações |
+| Bank_Accounts → Transactions | 1:N | Uma conta contém várias transações |
+| Categories → Transactions | 1:N | Uma categoria classifica várias transações |
+| Categories → Budgets | 1:N | Uma categoria pode ter vários orçamentos |
 | Categories → Categories | 1:N | Suporte a subcategorias (self-referential) |
 
 ---
 
 ## 4. Regras de Integridade
 
-- **CASCADE DELETE**: Ao eliminar um utilizador, todas as suas contas, transacoes, orcamentos e notificacoes sao removidos
-- **SET NULL**: Ao eliminar uma categoria, as transacoes associadas mantem-se mas perdem a referencia (category_id = NULL)
-- **UUIDs**: Todas as chaves primarias usam UUID v4 gerado automaticamente
-- **Indices**: Campos com queries frequentes (email, account_id, transaction_date) estao indexados
+- **CASCADE DELETE**: Ao eliminar um utilizador, todas as suas contas, transações, orçamentos e notificações são removidos
+- **SET NULL**: Ao eliminar uma categoria, as transações associadas mantêm-se mas perdem a referência (category_id = NULL)
+- **UUIDs**: Todas as chaves primárias usam UUID v4 gerado automaticamente
+- **Índices**: Campos com queries frequentes (email, account_id, transaction_date) estão indexados

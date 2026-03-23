@@ -1,13 +1,13 @@
 # FinTwin — Wireframes (Sprint 1)
 
-## Convencoes
+## Convenções
 
 ```
 ┌─────────┐  Caixa = container/card
 │         │
 └─────────┘
 
-[  Botao  ]  Botao clicavel
+[  Botão  ]  Botão clicável
 
 ( campo )    Input field
 
@@ -15,12 +15,12 @@
 
 ▼            Dropdown/select
 
-●            Icone/avatar
+●            Ícone/avatar
 ```
 
 ---
 
-## W01 — Pagina de Login
+## W01 — Página de Login
 
 ```
 ┌──────────────────────────────────────────────────┐
@@ -35,7 +35,7 @@
 │              │                      │            │
 │              │   [ Entrar         ] │            │
 │              │                      │            │
-│              │   Nao tens conta?    │            │
+│              │   Não tens conta?    │            │
 │              │   Criar conta        │            │
 │              │                      │            │
 │              └──────────────────────┘            │
@@ -47,18 +47,18 @@
 **Elementos:**
 - Logo FinTwin centrado
 - Campos de email e password (input-field)
-- Botao primario "Entrar" (btn-primary, full-width)
-- Link para pagina de registo
+- Botão primário "Entrar" (btn-primary, full-width)
+- Link para página de registo
 - Background com gradiente da cor brand
 
-**Interacoes:**
-- Enter submete o formulario
-- Erro de login mostra mensagem abaixo do formulario
-- Apos login, redireciona para Dashboard
+**Interações:**
+- Enter submete o formulário
+- Erro de login mostra mensagem abaixo do formulário
+- Após login, redireciona para Dashboard
 
 ---
 
-## W02 — Pagina de Registo
+## W02 — Página de Registo
 
 ```
 ┌──────────────────────────────────────────────────┐
@@ -74,7 +74,7 @@
 │              │                      │            │
 │              │   [ Criar Conta    ] │            │
 │              │                      │            │
-│              │   Ja tens conta?     │            │
+│              │   Já tens conta?     │            │
 │              │   Entrar             │            │
 │              │                      │            │
 │              └──────────────────────┘            │
@@ -83,9 +83,9 @@
 ```
 
 **Elementos:**
-- Campos: nome, email, password (obrigatorios), rendimento e moeda (opcionais)
+- Campos: nome, email, password (obrigatórios), rendimento e moeda (opcionais)
 - Dropdown de moeda (EUR, USD, GBP)
-- Botao "Criar Conta"
+- Botão "Criar Conta"
 - Link para login
 
 ---
@@ -97,8 +97,8 @@
 │ ● Sidebar        │  Header: glass panel + search + dark toggle │
 │                   │─────────────────────────────────────────────│
 │ ▸ Dashboard      │                                              │
-│   Transacoes     │  BOM DIA, JOAO                               │
-│   Orcamentos     │                                              │
+│   Transações     │  BOM DIA, JOÃO                               │
+│   Orçamentos     │                                              │
 │   Perfil         │  ┌──────────────┐ ┌──────────┐ ┌──────────┐ │
 │                   │  │ SALDO TOTAL  │ │ RECEITAS │ │ DESPESAS │ │
 │                   │  │              │ │          │ │          │ │
@@ -106,10 +106,10 @@
 │                   │  │              │ │  ↑ 12%   │ │  ↓ 5%   │ │
 │                   │  └──────────────┘ └──────────┘ └──────────┘ │
 │   ── ── ── ──    │                                              │
-│                   │  ULTIMAS TRANSACOES          [Ver todas →]  │
+│                   │  ÚLTIMAS TRANSAÇÕES          [Ver todas →]  │
 │   Sair           │  ┌───────────────────────────────────────┐  │
 │                   │  │ ● Continente    -45.30€   15 Jan     │  │
-│                   │  │ ● Salario      +1500.00€  01 Jan     │  │
+│                   │  │ ● Salário      +1500.00€  01 Jan     │  │
 │                   │  │ ● Uber Eats     -12.50€   14 Jan     │  │
 │                   │  │ ● Renda        -600.00€   01 Jan     │  │
 │                   │  │ ● Spotify       -10.99€   10 Jan     │  │
@@ -127,37 +127,37 @@
 ```
 
 **Elementos:**
-- Sidebar: navegacao principal, toggle dark mode, botao sair
-- Greeting como micro-label ("BOM DIA, JOAO")
+- Sidebar: navegação principal, toggle dark mode, botão sair
+- Greeting como micro-label ("BOM DIA, JOÃO")
 - 3 stat cards: saldo total (hero number), receitas, despesas
-- Lista das 5 transacoes mais recentes (TransactionRow)
-- Grafico pie chart de despesas por categoria
+- Lista das 5 transações mais recentes (TransactionRow)
+- Gráfico pie chart de despesas por categoria
 - Se utilizador novo: wizard de onboarding sobreposto
 
 ---
 
-## W04 — Pagina de Transacoes
+## W04 — Página de Transações
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
-│ Sidebar          │  TRANSACOES                                  │
+│ Sidebar          │  TRANSAÇÕES                                  │
 │                   │                                              │
 │                   │  ┌──────────┐ ┌──────────┐ ┌──────────┐    │
 │                   │  │ TOTAL    │ │ RECEITAS │ │ DESPESAS │    │
 │                   │  │ 45 txns  │ │ 1 500 €  │ │  -820 €  │    │
 │                   │  └──────────┘ └──────────┘ └──────────┘    │
 │                   │                                              │
-│                   │  [+ Nova Transacao]  [Importar CSV]          │
+│                   │  [+ Nova Transação]  [Importar CSV]          │
 │                   │                                              │
 │                   │  Filtros: (Todas) (Receitas) (Despesas)      │
-│                   │           ▼ Categoria   ▼ Periodo            │
+│                   │           ▼ Categoria   ▼ Período            │
 │                   │                                              │
 │                   │  HOJE — 22 MAR 2026                          │
 │                   │  ┌───────────────────────────────────────┐  │
 │                   │  │ ● Supermercado    -45.30€  Continente │  │
 │                   │  └───────────────────────────────────────┘  │
 │                   │  ┌───────────────────────────────────────┐  │
-│                   │  │ ● Almoco          -8.50€   Restaurante│  │
+│                   │  │ ● Almoço          -8.50€   Restaurante│  │
 │                   │  └───────────────────────────────────────┘  │
 │                   │                                              │
 │                   │  ONTEM — 21 MAR 2026                         │
@@ -165,33 +165,33 @@
 │                   │  │ ● Uber            -6.20€   Transportes│  │
 │                   │  └───────────────────────────────────────┘  │
 │                   │  ┌───────────────────────────────────────┐  │
-│                   │  │ ● Farmacia       -15.00€   Saude      │  │
+│                   │  │ ● Farmácia       -15.00€   Saúde      │  │
 │                   │  └───────────────────────────────────────┘  │
 └───────────────────┴─────────────────────────────────────────────┘
 ```
 
 **Elementos:**
-- 3 summary cards no topo (total transacoes, receitas, despesas)
-- Botoes de acao: "Nova Transacao" e "Importar CSV"
-- Filter pills: tipo (todas/receitas/despesas), categoria, periodo
-- Transacoes agrupadas por data (micro-label como separador)
-- Cada TransactionRow: icone categoria, descricao, valor, comerciante
-- Paginacao infinita ou botao "Carregar mais"
+- 3 summary cards no topo (total transações, receitas, despesas)
+- Botões de ação: "Nova Transação" e "Importar CSV"
+- Filter pills: tipo (todas/receitas/despesas), categoria, período
+- Transações agrupadas por data (micro-label como separador)
+- Cada TransactionRow: ícone categoria, descrição, valor, comerciante
+- Paginação infinita ou botão "Carregar mais"
 
 ---
 
-## W05 — Pagina de Orcamentos
+## W05 — Página de Orçamentos
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
-│ Sidebar          │  ORCAMENTOS                                  │
+│ Sidebar          │  ORÇAMENTOS                                  │
 │                   │                                              │
-│                   │  Periodo: (Jan) (Fev) (Mar) (Abr) ...       │
+│                   │  Período: (Jan) (Fev) (Mar) (Abr) ...       │
 │                   │                                              │
-│                   │  [+ Novo Orcamento]                          │
+│                   │  [+ Novo Orçamento]                          │
 │                   │                                              │
 │                   │  ┌───────────────────────────────────────┐  │
-│                   │  │ ● Restauracao                          │  │
+│                   │  │ ● Restauração                          │  │
 │                   │  │   120 / 200 EUR                        │  │
 │                   │  │   ████████████░░░░░░░░░  60%           │  │
 │                   │  │                               [Apagar] │  │
@@ -211,23 +211,23 @@
 │                   │  │                               [Apagar] │  │
 │                   │  └───────────────────────────────────────┘  │
 │                   │                                              │
-│                   │  RESUMO DO MES                               │
-│                   │  Total orcamentado: 400 EUR                  │
+│                   │  RESUMO DO MÊS                               │
+│                   │  Total orçamentado: 400 EUR                  │
 │                   │  Total gasto: 250 EUR (63%)                  │
 └───────────────────┴─────────────────────────────────────────────┘
 ```
 
 **Elementos:**
 - Filter pills de meses no topo
-- Botao "Novo Orcamento" abre formulario inline
-- Cards por categoria: icone, nome, valor gasto/limite, barra de progresso
+- Botão "Novo Orçamento" abre formulário inline
+- Cards por categoria: ícone, nome, valor gasto/limite, barra de progresso
 - Barra muda de cor quando > 80% (warning) ou > 100% (danger)
-- Botao de eliminar em cada card
-- Resumo do mes no fundo
+- Botão de eliminar em cada card
+- Resumo do mês no fundo
 
 ---
 
-## W06 — Pagina de Perfil
+## W06 — Página de Perfil
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
@@ -236,27 +236,27 @@
 │                   │  ┌───────────────────────────────────────┐  │
 │                   │  │  DADOS PESSOAIS                        │  │
 │                   │  │                                        │  │
-│                   │  │  Nome        ( Joao Silva            ) │  │
+│                   │  │  Nome        ( João Silva            ) │  │
 │                   │  │  Email       ( joao@email.com        ) │  │
 │                   │  │  Rendimento  ( 1500                  ) │  │
 │                   │  │  Moeda       ▼ EUR                     │  │
 │                   │  │                                        │  │
-│                   │  │  [ Guardar Alteracoes ]                │  │
+│                   │  │  [ Guardar Alterações ]                │  │
 │                   │  └───────────────────────────────────────┘  │
 │                   │                                              │
 │                   │  ┌───────────────────────────────────────┐  │
-│                   │  │  CONTAS BANCARIAS          [+ Nova]    │  │
+│                   │  │  CONTAS BANCÁRIAS          [+ Nova]    │  │
 │                   │  │                                        │  │
 │                   │  │  ● Caixa Geral                         │  │
 │                   │  │    Conta Corrente — 1 500,00 EUR       │  │
 │                   │  │                                        │  │
 │                   │  │  ● NovoBanco                           │  │
-│                   │  │    Poupanca — 2 000,00 EUR             │  │
+│                   │  │    Poupança — 2 000,00 EUR             │  │
 │                   │  │                                        │  │
 │                   │  └───────────────────────────────────────┘  │
 │                   │                                              │
 │                   │  ┌───────────────────────────────────────┐  │
-│                   │  │  PREFERENCIAS                          │  │
+│                   │  │  PREFERÊNCIAS                          │  │
 │                   │  │                                        │  │
 │                   │  │  Tema: (Claro) (Escuro) (Sistema)      │  │
 │                   │  │                                        │  │
@@ -265,9 +265,9 @@
 ```
 
 **Elementos:**
-- Card "Dados Pessoais": inputs editaveis + botao guardar
-- Card "Contas Bancarias": lista de contas com botao "Nova"
-- Card "Preferencias": toggle de tema (claro/escuro)
+- Card "Dados Pessoais": inputs editáveis + botão guardar
+- Card "Contas Bancárias": lista de contas com botão "Nova"
+- Card "Preferências": toggle de tema (claro/escuro)
 - Cada conta mostra: nome do banco, tipo, saldo
 
 ---
@@ -291,11 +291,11 @@
 │        │   a tua conta em 4 passos.     │        │
 │        │                                │        │
 │        │   ✓ Conecta a tua conta        │        │
-│        │   ✓ Regista uma transacao      │        │
-│        │   ✓ Define um orcamento        │        │
+│        │   ✓ Regista uma transação      │        │
+│        │   ✓ Define um orçamento        │        │
 │        │   ✓ Acompanha o teu progresso  │        │
 │        │                                │        │
-│        │   [      Comecar      ]        │        │
+│        │   [      Começar      ]        │        │
 │        │                                │        │
 │        └────────────────────────────────┘        │
 │                                                  │
@@ -304,15 +304,15 @@
 
 **4 Passos do Wizard:**
 
-| Passo | Conteudo | Campos |
+| Passo | Conteúdo | Campos |
 |:-----:|----------|--------|
 | 1 | Boas-vindas + overview | Nenhum (apenas CTA) |
-| 2 | Criar conta bancaria | Nome do banco, tipo, saldo |
-| 3 | Primeira transacao | Descricao, valor, categoria |
-| 4 | Definir orcamento | Categoria, limite mensal |
+| 2 | Criar conta bancária | Nome do banco, tipo, saldo |
+| 3 | Primeira transação | Descrição, valor, categoria |
+| 4 | Definir orçamento | Categoria, limite mensal |
 
-**Interacoes:**
+**Interações:**
 - Barra de progresso no topo (25% por passo)
-- Botao "Saltar" em cada passo
-- Cada passo tem: "Saltar" (secundario) + "Proximo/Concluir" (primario)
+- Botão "Saltar" em cada passo
+- Cada passo tem: "Saltar" (secundário) + "Próximo/Concluir" (primário)
 - Ao concluir, marca `localStorage.fintwin_onboarded = 1`
